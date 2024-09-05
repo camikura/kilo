@@ -1,19 +1,9 @@
 cmake_minimum_required(VERSION 3.30)
 
-project(kilo)
+project(kilo C)
 
-include_directories(include /opt/homebrew/include)
-link_directories(/opt/homebrew/lib)
+include_directories(include)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_C_STANDARD 23)
 
-# project
-add_subdirectory(src)
-
-# tests
-option(BUILD_TESTS "Build tests" OFF)
-if(BUILD_TESTS)
-  enable_testing()
-  add_subdirectory(tests)
-endif()
-
+add_executable(kilo src/main.c)

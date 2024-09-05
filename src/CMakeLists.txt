@@ -1,1 +1,1 @@
-add_executable(kilo main.cc)
+add_executable(kilo main.c)
