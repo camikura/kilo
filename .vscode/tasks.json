@@ -8,24 +8,15 @@
       "problemMatcher": []
     },
     {
+      "label": "run",
+      "type": "shell",
+      "command": "./build/kilo",
+      "problemMatcher": []
+    },
+    {
       "label": "build and run",
       "type": "shell",
       "command": "./scripts/build.sh && ./build/kilo",
-      "problemMatcher": []
-    },
-    {
-      "label": "test",
-      "type": "shell",
-      "command": "./scripts/test.sh",
-      "problemMatcher": []
-    },
-    {
-      "label": "run",
-      "type": "shell",
-      "command": "./kilo",
-      "options": {
-        "cwd": "${workspaceFolder}/build"
-      },
       "problemMatcher": []
     }
   ]
