@@ -8,7 +8,7 @@ link_directories(/opt/homebrew/lib)
 set(CMAKE_CXX_STANDARD 20)
 
 # project
-add_subdirectory(src)
+add_executable(kilo src/main.cc)
 
 # tests
 option(BUILD_TESTS "Build tests" OFF)
