@@ -13,3 +13,10 @@ CMakeUserPresets.json
 
 # build
 build/
+
+# vscode
+**/.vscode/*
+!**/.vscode/c_cpp_properties.example.json
+!**/.vscode/extensions.json
+!**/.vscode/settings.example.json
+!**/.vscode/tasks.json
