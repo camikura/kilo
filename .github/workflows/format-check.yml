@@ -20,6 +20,9 @@ jobs:
       - name: Install clang-format
         run: sudo apt-get install clang-format
 
+      - name: Display clang-format version
+        run: clang-format --version
+
       - name: Run clang-format
         if: false
         run: clang-format ./**/*.cc -n --Werror
