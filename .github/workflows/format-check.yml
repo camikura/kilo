@@ -20,4 +20,4 @@ jobs:
         run: sudo apt-get install clang-format
 
       - name: Run clang-format
-        run: clang-format ./src/*.cc -n --Werror
+        run: clang-format ./**/*.cc -n --Werror
