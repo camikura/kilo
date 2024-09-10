@@ -17,12 +17,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install clang-format
-        run: sudo apt-get install clang-format
-
-      - name: Display clang-format version
-        run: clang-format --version
-
       - name: Run clang-format
-        if: false
-        run: clang-format ./**/*.cc -n --Werror
+        uses: jidicula/clang-format-action@v4.13.0
+        with:
+          clang-format-version: 18
+          check-path: src
