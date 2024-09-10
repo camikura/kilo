@@ -28,6 +28,9 @@ jobs:
       - name: Install clang-format 18
         run: sudo apt-get install -y clang-format-18
 
+      - name: Verify clang-format version
+        run: sudo ln -sf /usr/bin/clang-format-18 /usr/bin/clang-format
+
       # - name: Uninstall default clang-format
       #   run: sudo apt-get remove -y clang-format
 
