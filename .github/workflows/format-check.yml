@@ -17,8 +17,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # - name: Install clang-format
-      #   run: sudo apt-get install clang-format
+      - name: Uninstall default clang-format
+        run: sudo apt-get remove -y clang-format
+
+      - name: Install clang-format
+        run: sudo apt-get install clang-format
 
       - name: Display clang-format version
         run: clang-format --version
