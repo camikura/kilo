@@ -17,9 +17,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Run clang-format
-        uses: jidicula/clang-format-action@v4.13.0
-        with:
-          clang-format-version: 18
-          check-path: src
-          fallback-style: Google
+      - name: Install clang-format
+        run: sudo apt-get install clang-format-18
+
+      - name: Display clang-format version
+        run: clang-format --version
+
+      - name: Run clang-format check
+        run: clang-format ./src/*.cc -n --Werror
