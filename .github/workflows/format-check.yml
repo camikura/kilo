@@ -17,6 +17,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Apt update
+        run: sudo apt update
+
+      - name: Base install
+        run: sudo apt install lsb-release wget software-properties-common gnupg
+
+      - name: Install llvm
+        run: sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
+
       - name: Install clang-format
         run: sudo apt-get install clang-18
         # run: sudo apt-get install clang-format
