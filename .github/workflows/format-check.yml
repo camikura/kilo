@@ -17,18 +17,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Apt update
-        run: sudo apt update
+      - name: Install clang-format 18
+        run: sudo apt-get install clang-format-18
 
-      - name: Base install
-        run: sudo apt install lsb-release wget software-properties-common gnupg
-
-      - name: Install llvm
-        run: sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
-
-      - name: Install clang-format
-        run: sudo apt-get install clang-18
-        # run: sudo apt-get install clang-format
+      - name: Update clang-format to version 18
+        run: sudo update-alternatives --install /usr/bin/clang-format clang-format /usr/bin/clang-format-18 100
 
       - name: Display clang-format version
         run: clang-format --version
