@@ -17,11 +17,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Uninstall default clang-format
-        run: sudo apt-get remove -y clang-format
+      - name: Add LLVM repo
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget lsb-release software-properties-common
+          wget https://apt.llvm.org/llvm.sh
+          chmod +x llvm.sh
+          sudo ./llvm.sh 18
 
-      - name: Install clang-format
-        run: sudo apt-get install clang-format
+      - name: Install clang-format 18
+        run: sudo apt-get install -y clang-format-18
+
+      # - name: Uninstall default clang-format
+      #   run: sudo apt-get remove -y clang-format
+
+      # - name: Install clang-format
+      #   run: sudo apt-get install clang-format
 
       - name: Display clang-format version
         run: clang-format --version
