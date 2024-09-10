@@ -17,11 +17,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install clang-format 18
-        run: sudo apt-get install clang-format-18
-
-      - name: Update clang-format to version 18
-        run: sudo update-alternatives --install /usr/bin/clang-format clang-format /usr/bin/clang-format-18 100
+      # - name: Install clang-format
+      #   run: sudo apt-get install clang-format
 
       - name: Display clang-format version
         run: clang-format --version
